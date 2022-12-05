@@ -1,0 +1,29 @@
+package facebookautomation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeMethod;
+
+public class cssSelector {
+	public WebDriver driver;
+	@BeforeMethod
+	public void setup() {
+		System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
+		driver = new ChromeDriver();
+	}
+	
+	public void fbLoginbyCSS() throws InterruptedException {
+		driver.get("https://www.facebook.com");
+		
+		driver.findElement(By.cssSelector("#email")).sendKeys("ssoun@gmail.com");
+		
+		driver.findElement(By.cssSelector(".inputtext _55r1 _6luy _9npi")).sendKeys("sskkju8998");
+		
+		driver.findElement(By.cssSelector("._42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy")).click();
+		Thread.sleep(3000);
+		
+		driver.close();
+	}
+
+}
