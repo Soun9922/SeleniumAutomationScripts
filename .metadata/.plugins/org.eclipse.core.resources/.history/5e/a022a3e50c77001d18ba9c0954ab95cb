@@ -1,0 +1,22 @@
+package facebookautomation;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class browserPopUp {
+	public WebDriver driver;
+	@BeforeMethod
+	public void driverSetup() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\souna\\driverfortest\\chromedriver.exe");
+		driver = new ChromeDriver();
+	}
+	
+	@Test
+	public void printWindowHandel() {
+		driver.get("https://www.naukri.com/");
+		String windowHandle = driver.getWindowHandle();
+		System.out.println(" " + windowHandle);
+	}
+}

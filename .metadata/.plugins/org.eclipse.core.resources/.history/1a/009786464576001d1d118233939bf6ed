@@ -1,0 +1,69 @@
+package facebookautomation;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class selectClass{
+	public WebDriver driver;
+	@BeforeMethod
+	public void driverSetup() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\souna\\driverfortest\\chromedriver.exe");
+		driver = new ChromeDriver();
+	}
+	
+	@Test
+	public void selectMethods() {
+		driver.get("file:///C:/Users/souna/OneDrive/Desktop/FoodSelect/ListBox_Food.html");
+		driver.manage().window().maximize();
+		
+		WebElement eleList = driver.findElement(By.id("mtr"));
+		
+		Select sclt = new Select(eleList);
+		List<WebElement> optns = sclt.getOptions();
+		int size1 = optns.size();
+		
+		System.out.println("Number of elements present in the box : " + size1);
+		
+		for(WebElement webElemt : optns) {
+			String txt = webElemt.getText();
+			System.out.println("The Elements are : " + txt );
+		}
+		
+		sclt.selectByIndex(0);
+		sclt.selectByValue("i");
+		sclt.selectByVisibleText("poori");
+		
+		List<WebElement> allSelectedOptns = sclt.getAllSelectedOptions();
+		int size2 = allSelectedOptns.size();
+		
+		System.out.println("Number of elements present in the box : " + size2);
+		
+		System.out.println("------All Selected Items are printed Below------");
+		
+		for(WebElement wbElmnt : allSelectedOptns) {
+			System.out.println("The Foods are : " + wbElmnt.getText());
+		}
+		
+		System.out.println("------Check Weather it's Multiple Select ListBox------");
+		
+		boolean mltpl = sclt.isMultiple();
+		System.out.println( mltpl + " Yes,It's Multiple Select");
+		
+		if(mltpl) {
+			
+			WebElement firstSelectedoptn = sclt.getFirstSelectedOption();
+			System.out.println(firstSelectedoptn.getText() + " is the first selected item in the box");
+			
+			sclt.deselectByIndex(0);
+			sclt.deselectByValue("v");
+			sclt.deselectByVisibleText("poori");
+		}
+	}
+}

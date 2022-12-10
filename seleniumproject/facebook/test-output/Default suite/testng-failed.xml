@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="facebookautomation.actioClass">
+      <class name="facebookautomation.browserPopUp">
         <methods>
-          <include name="contextClick_withKeyBoardFunctions"/>
+          <include name="closeMainBrowser"/>
           <include name="driverSetup"/>
         </methods>
-      </class> <!-- facebookautomation.actioClass -->
+      </class> <!-- facebookautomation.browserPopUp -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

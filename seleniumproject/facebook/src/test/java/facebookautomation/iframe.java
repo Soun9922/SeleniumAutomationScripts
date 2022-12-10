@@ -11,7 +11,7 @@ public class iframe {
 	public WebDriver driver;
 	@BeforeMethod
 	public void driverSetup() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\souna\\Driverfortesting\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\souna\\driverfortest\\chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 	
@@ -37,8 +37,8 @@ public class iframe {
 		driver.get("file:///C:/Users/souna/OneDrive/Documents/frame/page2.html");
 		driver.manage().window().maximize();
 		
-		WebElement f = driver.findElement(By.className("c1"));
-		driver.switchTo().frame(f);
+		WebElement frame = driver.findElement(By.className("c1"));
+		driver.switchTo().frame(frame);
 		Thread.sleep(3000);
 		driver.findElement(By.id("t1")).sendKeys("Rakars");
 		Thread.sleep(3000);

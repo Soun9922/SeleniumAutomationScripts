@@ -10,7 +10,7 @@ public class javaScriptExceuter {
 	public WebDriver driver;
 	@BeforeMethod
 	public void driverSetup() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\souna\\Driverfortesting\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\souna\\driverfortest\\chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 	

@@ -1,0 +1,16 @@
+package facebookautomation;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeMethod;
+
+public class closeMainBrowser {
+	public WebDriver driver;
+	@BeforeMethod
+	public void driverSetup() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\souna\\driverfortest\\chromedriver.exe");
+		driver = new ChromeDriver();
+	}
+	
+	public void 
+}
